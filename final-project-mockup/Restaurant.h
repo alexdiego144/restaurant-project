@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <vector>
 #include "Windows.h"
 using namespace std;
 
@@ -14,6 +15,7 @@ private:
 	int price;
 	bool favorite;
 	Restaurant* next;
+	Restaurant* head; 
 
 public:
 	Restaurant();
@@ -29,8 +31,15 @@ public:
 	string getCuisine()const;
 	int getPrice()const;
 	bool setFavorite()const;
-		// the above are more behind the scenes
+	void loadRestaurantsFromFile(const std::string& filename);
+	// the above are more behind the scenes
 
+	//I'll be adding ui features - Alex
+	void setInitialMenuChoice(); 
+	void displayMenu();
+	void searchByCuisine();
+	void seeFavoriteRestaurants();
+	void helpMeDecide();
 	void rateRestaurant();
 	void favoriteRestaurant();
 
